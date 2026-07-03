@@ -2,6 +2,7 @@
   width: 240px;
   min-width: 240px;
   height: 100vh;
+  height: 100dvh;
   position: sticky;
   top: 0;
   display: flex;
@@ -253,4 +254,81 @@
   font-size: 11px;
   color: var(--text-muted);
   letter-spacing: 0.02em;
+}
+
+/* ── Mobile bottom nav ── */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: auto;
+    width: 100%;
+    min-width: 0;
+    height: 60px;
+    flex-direction: row;
+    padding: 0;
+    border-right: none;
+    border-top: 1px solid var(--glass-border);
+    overflow: visible;
+    z-index: 100;
+    gap: 0;
+  }
+
+  .brand,
+  .spacer,
+  .bottom,
+  .divider,
+  .section {
+    display: none;
+  }
+
+  .nav {
+    flex-direction: row;
+    flex: 1;
+    gap: 0;
+    align-items: stretch;
+  }
+
+  .navItem {
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 6px 4px 4px;
+    border-radius: 0;
+    gap: 3px;
+    font-size: 9px;
+    letter-spacing: 0.03em;
+  }
+
+  .navIcon {
+    font-size: 20px;
+    width: auto;
+  }
+
+  .navLabel {
+    flex: unset;
+    font-size: 9px;
+  }
+
+  .activeIndicator {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 24px;
+    height: 2px;
+    border-radius: 0 0 2px 2px;
+  }
+
+  .badge {
+    position: absolute;
+    top: 6px;
+    right: calc(50% - 18px);
+    font-size: 9px;
+    min-width: 15px;
+    padding: 1px 4px;
+  }
 }

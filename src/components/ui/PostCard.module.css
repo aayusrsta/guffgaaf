@@ -239,3 +239,25 @@
 }
 
 .commentSubmit:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .card {
+    border-radius: 14px;
+    padding: 14px;
+    gap: 10px;
+  }
+
+  .card:hover {
+    transform: none;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+
+  .actionBtn {
+    padding: 5px 10px;
+    font-size: 13px;
+  }
+}

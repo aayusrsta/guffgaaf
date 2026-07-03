@@ -164,3 +164,19 @@
   max-width: 320px;
   line-height: 1.5;
 }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .item {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .desc {
+    font-size: 12px;
+  }
+}

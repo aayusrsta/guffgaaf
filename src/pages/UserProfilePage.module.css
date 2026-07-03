@@ -147,3 +147,32 @@
   border-radius: 999px; padding: 8px 20px; cursor: pointer;
   font-family: var(--f-label); font-size: 12px; color: var(--text);
 }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .cover {
+    height: 130px;
+    border-radius: 0;
+    margin: -16px -12px 0;
+  }
+
+  .profileHeader {
+    flex-wrap: wrap;
+    padding: 12px 14px 16px;
+    border-radius: 14px;
+    gap: 10px;
+  }
+
+  .avatarWrap {
+    margin-top: -36px;
+  }
+
+  .displayName {
+    font-size: 18px;
+  }
+
+  .followBtn, .unfollowBtn, .msgBtn {
+    padding: 7px 14px;
+    font-size: 11px;
+  }
+}

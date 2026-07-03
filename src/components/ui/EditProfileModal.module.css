@@ -255,3 +255,17 @@
   transition: opacity 0.15s;
 }
 .saveBtn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .modal {
+    max-width: 100%;
+    border-radius: 24px 24px 0 0;
+    max-height: 92dvh;
+  }
+}

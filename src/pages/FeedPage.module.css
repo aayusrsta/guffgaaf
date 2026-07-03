@@ -192,3 +192,23 @@
 .pulse {
   animation: pulse 1.8s ease-in-out infinite;
 }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .page {
+    gap: 14px;
+  }
+
+  .title {
+    font-size: 22px;
+  }
+
+  .compose {
+    border-radius: 14px;
+    padding: 14px;
+  }
+
+  .feed {
+    gap: 12px;
+  }
+}

@@ -135,3 +135,20 @@
   text-decoration: none;
   font-weight: 600;
 }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .page {
+    align-items: flex-start;
+    padding: 0;
+    min-height: 100dvh;
+  }
+
+  .card {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    padding: 40px 24px 32px;
+    min-height: 100dvh;
+  }
+}

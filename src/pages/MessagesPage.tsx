@@ -45,7 +45,7 @@ function StoryContextCard({ ctx, isMe }: { ctx: StoryContext; isMe: boolean }) {
   )
 }
 
-function ChatPanel({ conv }: { conv: ApiConversation }) {
+function ChatPanel({ conv, onBack }: { conv: ApiConversation; onBack: () => void }) {
   const me = useAppSelector((s) => s.auth.user)
   const { data, isError: msgsError, refetch } = useGetMessagesQuery(conv.id, { refetchOnMountOrArgChange: true })
   const [pendingMsgs, setPendingMsgs] = useState<ApiMessage[]>([])
@@ -107,6 +107,7 @@ function ChatPanel({ conv }: { conv: ApiConversation }) {
   return (
     <div className={styles.chatPanel}>
       <div className={`${styles.chatHeader} glass`}>
+        <button className={styles.backBtn} onClick={onBack}>‹</button>
         <Avatar src={conv.participant.avatar ?? ''} alt={conv.participant.displayName} size="sm" online={conv.participant.isOnline} />
         <div className={styles.chatHeaderInfo}>
           <span className={styles.chatName}>{conv.participant.displayName}</span>
@@ -242,11 +243,13 @@ export function MessagesPage() {
     () => sessionStorage.getItem(ACTIVE_CONV_KEY)
   )
   const [showNewChat, setShowNewChat] = useState(false)
+  const [mobileShowChat, setMobileShowChat] = useState(false)
   const activeConv = conversations.find((c) => c.id === activeConvId) ?? null
 
-  const selectConv = (id: string) => {
+  const selectConv = (id: string, openChat = true) => {
     setActiveConvId(id)
     sessionStorage.setItem(ACTIVE_CONV_KEY, id)
+    if (openChat) setMobileShowChat(true)
   }
 
   useEffect(() => {
@@ -258,7 +261,7 @@ export function MessagesPage() {
   useEffect(() => {
     if (conversations.length === 0) return
     if (activeConvId && conversations.some((c) => c.id === activeConvId)) return
-    selectConv(conversations[0].id)
+    selectConv(conversations[0].id, false)
   }, [conversations, activeConvId])
 
   useEffect(() => {
@@ -271,7 +274,7 @@ export function MessagesPage() {
   }, [socket, dispatch])
 
   return (
-    <div className={styles.page}>
+    <div className={`${styles.page} ${mobileShowChat ? styles.mobileChat : ''}`}>
       <div className={`${styles.convList} glass`}>
         <div className={styles.convListHeader}>
           <h2 className={styles.convListTitle}>Messages</h2>
@@ -291,7 +294,7 @@ export function MessagesPage() {
                 <motion.button
                   key={conv.id}
                   className={`${styles.convItem} ${activeConvId === conv.id ? styles.convActive : ''}`}
-                  onClick={() => selectConv(conv.id)}
+                  onClick={() => selectConv(conv.id, true)}
                   whileTap={{ scale: 0.97 }}
                 >
                   <Avatar src={conv.participant?.avatar ?? ''} alt={conv.participant?.displayName ?? ''} size="md" online={conv.participant?.isOnline} />
@@ -314,7 +317,7 @@ export function MessagesPage() {
       </div>
 
       {activeConv
-        ? <ChatPanel key={activeConv.id} conv={activeConv} />
+        ? <ChatPanel key={activeConv.id} conv={activeConv} onBack={() => setMobileShowChat(false)} />
         : (
           <div className={styles.emptyPanel}>
             <span className={styles.emptyIcon}>◉</span>

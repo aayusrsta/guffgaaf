@@ -157,3 +157,19 @@
   background: var(--accent);
   color: #fff;
 }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .title {
+    font-size: 22px;
+  }
+
+  .personCard {
+    padding: 12px 14px;
+    gap: 10px;
+  }
+
+  .personBio {
+    display: none;
+  }
+}

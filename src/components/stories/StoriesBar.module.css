@@ -83,3 +83,20 @@
   white-space: nowrap;
   text-align: center;
 }
+
+/* ── Mobile ── */
+@media (max-width: 767px) {
+  .scroll {
+    gap: 14px;
+    padding: 4px 2px 6px;
+  }
+
+  .ring {
+    width: 52px;
+    height: 52px;
+  }
+
+  .label {
+    max-width: 52px;
+  }
+}
