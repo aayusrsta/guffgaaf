@@ -1,0 +1,84 @@
+.root {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.picker {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  z-index: 50;
+  white-space: nowrap;
+}
+
+.chip {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: var(--f-label);
+  font-weight: 700;
+  color: var(--text);
+  transition: background 0.15s;
+}
+
+.chip:hover {
+  background: var(--glass-border);
+}
+
+.chip.active {
+  background: var(--accent);
+  color: #fff;
+}
+
+.trigger {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--glass);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--f-label);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.trigger:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.trigger.reacted {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  color: var(--accent);
+}
+
+.defaultIcon,
+.burstIcon {
+  display: inline-block;
+  line-height: 1;
+}
+
+.count {
+  font-size: 12px;
+  min-width: 8px;
+}

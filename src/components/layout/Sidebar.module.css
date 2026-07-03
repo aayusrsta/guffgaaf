@@ -1,0 +1,256 @@
+.sidebar {
+  width: 240px;
+  min-width: 240px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  border-right: 1px solid var(--glass-border);
+  border-radius: 0;
+  overflow-y: auto;
+  gap: 6px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px 16px;
+}
+
+.brandIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.brandName {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--text);
+  letter-spacing: -0.03em;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-family: var(--f-label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: all 0.15s;
+  position: relative;
+  cursor: pointer;
+}
+
+.navItem:hover {
+  background: var(--glass);
+  color: var(--text);
+}
+
+.navItem.active {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+.navIcon {
+  font-size: 18px;
+  width: 22px;
+  text-align: center;
+  line-height: 1;
+}
+
+.navLabel {
+  flex: 1;
+}
+
+.badge {
+  font-family: var(--f-label);
+  font-size: 10px;
+  font-weight: 700;
+  background: var(--accent);
+  color: #fff;
+  padding: 1px 6px;
+  border-radius: 999px;
+  min-width: 18px;
+  text-align: center;
+}
+
+.activeIndicator {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
+.divider {
+  height: 1px;
+  background: var(--glass-border);
+  margin: 10px 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sectionLabel {
+  font-family: var(--f-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  padding: 0 12px;
+}
+
+.orbitList {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.orbitItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.orbitItem:hover {
+  background: var(--glass);
+}
+
+.orbitDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.orbitName {
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  transition: color 0.15s;
+}
+
+.orbitItem:hover .orbitName {
+  color: var(--text);
+}
+
+.spacer {
+  flex: 1;
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.notifDot {
+  font-family: var(--f-label);
+  font-size: 11px;
+  font-weight: 700;
+  background: #EF4444;
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  align-self: flex-start;
+  margin-left: 12px;
+}
+
+.logoutBtn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: var(--f-label);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  width: 100%;
+  text-align: left;
+  transition: all 0.15s;
+}
+.logoutBtn:hover {
+  background: rgba(239,68,68,0.1);
+  color: #ef4444;
+}
+.logoutIcon {
+  font-size: 17px;
+  width: 22px;
+  text-align: center;
+}
+
+.userCard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.userCard:hover {
+  background: var(--glass);
+}
+
+.userInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  overflow: hidden;
+}
+
+.userName {
+  font-family: var(--f-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.userHandle {
+  font-family: var(--f-label);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}

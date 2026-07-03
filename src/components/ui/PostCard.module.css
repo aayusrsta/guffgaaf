@@ -1,0 +1,241 @@
+.card {
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.12);
+}
+
+.orbitBadge {
+  align-self: flex-start;
+  font-family: var(--f-label);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 3px 10px;
+  border-radius: 999px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.authorInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.displayName {
+  font-family: var(--f-heading);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.verified {
+  font-size: 11px;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.handle {
+  font-family: var(--f-label);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+}
+
+.time {
+  font-family: var(--f-label);
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.content {
+  font-family: var(--f-body);
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text);
+  margin: 0;
+}
+
+.imageWrap {
+  border-radius: 14px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.imageWrap:hover .image {
+  transform: scale(1.03);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tag {
+  font-family: var(--f-label);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  padding: 2px 8px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.actionBtn {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1.5px solid var(--glass-border);
+  background: var(--glass);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: var(--f-label);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.2s;
+  backdrop-filter: blur(8px);
+}
+
+.actionBtn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.statNum {
+  font-size: 12px;
+}
+
+.comments {
+  overflow: hidden;
+}
+
+.commentsInner {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 4px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.comment {
+  display: flex;
+  gap: 8px;
+  align-items: flex-start;
+}
+
+.commentBody {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.commentAuthor {
+  font-family: var(--f-heading);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.commentText {
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.loadingText {
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 8px;
+}
+
+.commentForm {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 8px;
+  border-top: 1px solid var(--glass-border);
+}
+
+.commentInput {
+  flex: 1;
+  background: var(--glass);
+  border: 1.5px solid var(--glass-border);
+  border-radius: 999px;
+  padding: 7px 14px;
+  font-family: var(--f-body);
+  font-size: 13px;
+  color: var(--text);
+  outline: none;
+}
+
+.commentInput::placeholder { color: var(--text-muted); }
+.commentInput:focus { border-color: var(--accent); }
+
+.commentSubmit {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 13px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.commentSubmit:disabled { opacity: 0.4; cursor: not-allowed; }

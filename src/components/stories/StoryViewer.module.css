@@ -1,0 +1,219 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewer {
+  width: 360px;
+  height: 640px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  background: #111;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.6);
+}
+
+/* Progress bars */
+.progressBars {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  gap: 4px;
+  z-index: 10;
+}
+
+.progressTrack {
+  flex: 1;
+  height: 3px;
+  border-radius: 2px;
+  background: rgba(255,255,255,0.3);
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: #fff;
+  border-radius: 2px;
+}
+
+/* Header */
+.header {
+  position: absolute;
+  top: 24px;
+  left: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.headerInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.authorName {
+  font-family: var(--f-heading);
+  font-size: 13px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.5);
+}
+
+.timeAgo {
+  font-family: var(--f-label);
+  font-size: 10px;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.04em;
+}
+
+.closeBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  font-size: 20px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* Content */
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.storyImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.storyText {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  text-align: center;
+  padding: 32px 24px;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+/* Tap zones */
+.tapPrev,
+.tapNext {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 40%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.tapPrev { left: 0; }
+.tapNext { right: 0; }
+
+/* Stats */
+.stats {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+  padding: 6px 16px;
+  border-radius: 999px;
+  z-index: 10;
+}
+
+.stats span {
+  font-family: var(--f-label);
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+
+/* Reply */
+.replyBar {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 10;
+}
+
+.replyTrigger {
+  width: 100%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  color: rgba(255,255,255,0.7);
+  font-family: var(--f-body);
+  font-size: 13px;
+  padding: 10px 16px;
+  cursor: pointer;
+  text-align: left;
+  backdrop-filter: blur(8px);
+}
+
+.replyInput {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.replyField {
+  flex: 1;
+  background: rgba(255,255,255,0.12);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  border-radius: 999px;
+  color: #fff;
+  font-family: var(--f-body);
+  font-size: 13px;
+  padding: 10px 16px;
+  outline: none;
+  backdrop-filter: blur(8px);
+}
+
+.replyField::placeholder { color: rgba(255,255,255,0.5); }
+.replyField:focus { border-color: rgba(255,255,255,0.6); }
+
+.sendReply {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}

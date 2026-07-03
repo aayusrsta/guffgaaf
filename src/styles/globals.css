@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Josefin+Sans:wght@400;600;700&family=Nunito:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ─── Design tokens ─── */
+:root {
+  /* Brand */
+  --indigo:       #6366F1;
+  --indigo-light: #818CF8;
+  --indigo-dim:   rgba(99, 102, 241, 0.12);
+  --violet:       #8B5CF6;
+  --pink:         #EC4899;
+  --teal:         #14B8A6;
+  --amber:        #F59E0B;
+  --green:        #10B981;
+
+  /* Radius */
+  --r-xs:   8px;
+  --r-sm:   12px;
+  --r:      18px;
+  --r-lg:   24px;
+  --r-xl:   32px;
+  --r-full: 9999px;
+
+  /* Fonts */
+  --f-display: 'Montserrat', sans-serif;    /* Hero titles, brand */
+  --f-heading: 'Poppins', sans-serif;       /* Card titles, usernames, buttons */
+  --f-label:   'Josefin Sans', sans-serif;  /* Nav, badges, metadata, small caps */
+  --f-body:    'Nunito', sans-serif;        /* Post content, comments, bio, body */
+
+  /* Transitions */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Semantic shortcuts */
+  --accent:     #6366F1;
+  --text-muted: #9898B8;
+}
+
+/* ─── Light theme ─── */
+[data-theme="light"], :root {
+  --bg:           #EEF0FB;
+  --bg-2:         #E4E7F8;
+  --bg-mesh:
+    radial-gradient(ellipse 80% 60% at 15% 40%, rgba(99,102,241,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(139,92,246,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 50% 90%, rgba(20,184,166,0.1) 0%, transparent 50%),
+    #EEF0FB;
+
+  --glass:        rgba(255, 255, 255, 0.60);
+  --glass-strong: rgba(255, 255, 255, 0.82);
+  --glass-border: rgba(255, 255, 255, 0.90);
+  --glass-shadow: 0 4px 32px rgba(99,102,241,0.10), 0 1px 3px rgba(0,0,0,0.06);
+  --glass-shadow-hover: 0 8px 40px rgba(99,102,241,0.18), 0 2px 8px rgba(0,0,0,0.08);
+
+  --sidebar-bg:   rgba(255, 255, 255, 0.50);
+  --sidebar-border: rgba(255, 255, 255, 0.80);
+
+  --text:         #1A1A2E;
+  --text-2:       #4B4B6B;
+  --text-3:       #9898B8;
+  --text-inv:     #FFFFFF;
+
+  --input-bg:     rgba(255, 255, 255, 0.70);
+  --input-border: rgba(99, 102, 241, 0.20);
+  --input-focus:  rgba(99, 102, 241, 0.50);
+
+  --divider:      rgba(99, 102, 241, 0.10);
+  --hover-bg:     rgba(99, 102, 241, 0.06);
+
+  --online:       #22C55E;
+  --accent:       #6366F1;
+  --text-muted:   #6B6B8D;
+}
+
+/* ─── Dark theme ─── */
+[data-theme="dark"] {
+  --bg:           #0D0D1A;
+  --bg-2:         #131325;
+  --bg-mesh:
+    radial-gradient(ellipse 80% 60% at 15% 40%, rgba(99,102,241,0.22) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 15%, rgba(139,92,246,0.18) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 60% at 50% 90%, rgba(20,184,166,0.10) 0%, transparent 50%),
+    #0D0D1A;
+
+  --glass:        rgba(255, 255, 255, 0.05);
+  --glass-strong: rgba(255, 255, 255, 0.09);
+  --glass-border: rgba(255, 255, 255, 0.10);
+  --glass-shadow: 0 4px 32px rgba(0,0,0,0.35), 0 1px 3px rgba(0,0,0,0.3);
+  --glass-shadow-hover: 0 8px 40px rgba(99,102,241,0.25), 0 2px 8px rgba(0,0,0,0.4);
+
+  --sidebar-bg:   rgba(255, 255, 255, 0.04);
+  --sidebar-border: rgba(255, 255, 255, 0.08);
+
+  --text:         #E8E8F4;
+  --text-2:       #9898B8;
+  --text-3:       #4B4B6B;
+  --text-inv:     #1A1A2E;
+
+  --input-bg:     rgba(255, 255, 255, 0.06);
+  --input-border: rgba(255, 255, 255, 0.12);
+  --input-focus:  rgba(99, 102, 241, 0.50);
+
+  --divider:      rgba(255, 255, 255, 0.07);
+  --hover-bg:     rgba(255, 255, 255, 0.05);
+
+  --online:       #22C55E;
+  --accent:       #818CF8;
+  --text-muted:   #9898B8;
+}
+
+/* ─── Base ─── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--f-body);
+  background: var(--bg-mesh);
+  background-attachment: fixed;
+  color: var(--text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  transition: background 0.4s var(--ease), color 0.4s var(--ease);
+}
+
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--divider); border-radius: 4px; }
+
+::selection { background: var(--indigo-dim); color: var(--indigo); }
+
+/* ─── Glass utility ─── */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.glass-strong {
+  background: var(--glass-strong);
+  backdrop-filter: blur(28px);
+  -webkit-backdrop-filter: blur(28px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
