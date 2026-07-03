@@ -37,7 +37,7 @@ export function Sidebar() {
   return (
     <aside className={`${styles.sidebar} glass`}>
       <div className={styles.brand}>
-        <img src="/gg-icon.png" alt="GuffGaaf" className={styles.brandIcon} />
+        <img src={`${import.meta.env.BASE_URL}gg-icon.png`} alt="GuffGaaf" className={styles.brandIcon} />
         <span className={styles.brandName}>GuffGaaf</span>
       </div>
 

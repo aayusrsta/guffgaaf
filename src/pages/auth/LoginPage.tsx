@@ -32,7 +32,7 @@ export function LoginPage() {
         transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
       >
         <div className={styles.brand}>
-          <img src="/guffgaaf-logo.png" alt="GuffGaaf" className={styles.brandLogo} />
+          <img src={`${import.meta.env.BASE_URL}guffgaaf-logo.png`} alt="GuffGaaf" className={styles.brandLogo} />
         </div>
 
         <form className={styles.form} onSubmit={handleSubmit}>
